@@ -1,0 +1,21 @@
+# Compose dreamcat4/pxe
+# https://hub.docker.com/r/dreamcat4/pxe
+
+version: '3'
+
+services:
+
+  pxe:
+    image: dreamcat4/pxe
+    container_name: pxe
+    #hostname: pxe
+    privileged: true
+    restart: 'no'
+    network_mode: bridge
+    tty: true
+    ports:
+      - "67:67"
+      - "69:69"
+
+    #volumes:
+      #- ./pxe:/pxe
